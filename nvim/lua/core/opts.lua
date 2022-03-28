@@ -12,3 +12,4 @@ o.signcolumn = "yes"
 o.swapfile = false
 o.undofile = true
 o.updatetime = 700
+o.mouse = "n"
