@@ -5,7 +5,25 @@ require('packer').startup(function(use)
 	use {
 		'ful1e5/onedark.nvim',
 		config = function()
+			require('onedark').setup {
+				overrides = function(colors)
+					return {
+						Visual = { style = "reverse" }
+					}
+				end
+			}
 			vim.cmd[[colo onedark]]
+		end
+	}
+	use {
+		'nvim-lualine/lualine.nvim',
+		requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+		config = function()
+			require('lualine').setup {
+				options = {
+					theme = 'onedark-nvim',
+				}
+			}
 		end
 	}
 	use {
