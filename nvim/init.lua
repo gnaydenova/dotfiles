@@ -163,6 +163,7 @@ require('packer').startup(function(use)
 	use {
 		'folke/lua-dev.nvim'
 	}
+	use { 'tpope/vim-unimpaired' }
 	use {
 		'hrsh7th/nvim-cmp',
 		requires = {
@@ -244,7 +245,7 @@ require('packer').startup(function(use)
 							fallback()
 						end
 					end, { "i", "s" }),
-					['<CR>'] = cmp.mapping.confirm({ select = true }),
+					['<CR>'] = cmp.mapping.confirm({ select = false }),
 				}
 			}
 		end
