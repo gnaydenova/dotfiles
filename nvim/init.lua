@@ -163,6 +163,13 @@ require('packer').startup(function(use)
 	use {
 		'folke/lua-dev.nvim'
 	}
+	use {
+		"folke/which-key.nvim",
+		config = function()
+			require("which-key").setup {
+			}
+		end
+	}
 	use { 'tpope/vim-unimpaired' }
 	use {
 		'hrsh7th/nvim-cmp',
