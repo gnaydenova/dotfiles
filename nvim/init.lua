@@ -23,6 +23,7 @@ require('packer').startup(function(use)
 			vim.cmd [[colo onedark]]
 		end
 	}
+	use "tpope/vim-fugitive"
 	use {
 		"lewis6991/gitsigns.nvim",
 		config = function()
