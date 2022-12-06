@@ -153,7 +153,7 @@ require('packer').startup(function(use)
 	use {
 		'nvim-telescope/telescope.nvim',
 		requires = { 'nvim-lua/plenary.nvim' },
-		config = function ()
+		config = function()
 			require('core.mappings').telescope()
 		end
 	}
@@ -311,6 +311,12 @@ require('packer').startup(function(use)
 
 			vim.keymap.set("n", "§", "<CMD>e .<CR>", { desc = "Open current working directory" })
 			vim.keymap.set("n", "-", "<CMD>e %:p:h<CR>", { desc = "Open parent directory" })
+		end
+	}
+	use {
+		'numToStr/Comment.nvim',
+		config = function()
+			require('Comment').setup()
 		end
 	}
 end)
