@@ -15,6 +15,6 @@ vim.o.signcolumn = "yes"
 vim.o.swapfile = false
 vim.o.undofile = true
 vim.o.updatetime = 700
-vim.o.mouse = "n"
+vim.o.mouse = "c" -- Don't touch!!!
 vim.o.completeopt = "menu,menuone,noselect"
 vim.o.timeoutlen = 200
