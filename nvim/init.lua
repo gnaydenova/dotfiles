@@ -152,7 +152,10 @@ require('packer').startup(function(use)
 	use 'tpope/vim-surround'
 	use {
 		'nvim-telescope/telescope.nvim',
-		requires = { 'nvim-lua/plenary.nvim' }
+		requires = { 'nvim-lua/plenary.nvim' },
+		config = function ()
+			require('core.mappings').telescope()
+		end
 	}
 	use {
 		'neovim/nvim-lspconfig',

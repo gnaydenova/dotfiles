@@ -1,5 +1,6 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+vim.g.mapleader = vim.api.nvim_replace_termcodes("<space>", true, true, true)
 
 vim.o.shiftwidth = 4
 vim.o.scrolloff = 10
