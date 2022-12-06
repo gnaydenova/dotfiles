@@ -1,4 +1,9 @@
-local lspconfig = require "lspconfig"
+local has_lspconfig, lspconfig = pcall(require, "lspconfig")
+
+if not has_lspconfig then
+    vim.notify("lspconfig is missing", vim.log.levels.WARN)
+    return
+end
 
 local function on_attach(_, bufnr)
 	vim.opt_local.omnifunc = "v:lua.vim.lsp.omnifunc"
