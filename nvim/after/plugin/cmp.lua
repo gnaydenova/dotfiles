@@ -1,13 +1,18 @@
 local has_cmp, cmp = pcall(require, "cmp")
 
 if not has_cmp then
-    vim.notify("cmp is missing", vim.log.levels.WARN)
-    return
+	vim.notify("cmp is missing", vim.log.levels.WARN)
+	return
 end
 
 local luasnip = require("luasnip")
 
-luasnip.config.set_config({ history = true })
+luasnip.config.set_config({
+	history = true,
+	update_events = "TextChanged,TextChangedI",
+	region_check_events = "CursorHold",
+	delete_check_events = "TextChanged"
+})
 
 require("luasnip.loaders.from_vscode").lazy_load()
 require("luasnip.loaders.from_lua").load()
