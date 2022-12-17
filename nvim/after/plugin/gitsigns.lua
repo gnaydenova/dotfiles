@@ -1,7 +1,7 @@
-local has_gitsigns, gitsigns = pcall(require, "gitstigns")
+local has_gitsigns, gitsigns = pcall(require, "gitsigns")
 
 if not has_gitsigns then
-	vim.notify("gitstigns is missing", vim.log.levels.WARN)
+	vim.notify("gitsigns is missing", vim.log.levels.WARN)
 	return
 end
 
