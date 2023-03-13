@@ -4,10 +4,20 @@ return {
 	lazy = false,
 	name = "catppuccin",
 	opts = {
-		flavour = "macchiato"
+		flavour = "macchiato",
+		integrations = {
+			cmp = true,
+			gitsigns = true,
+			nvimtree = true,
+			telescope = true,
+			dap = {
+				enabled = true,
+				enable_ui = true,
+			}
+		}
 	},
 	config = function(_, opts)
 		require("catppuccin").setup(opts)
-        vim.cmd.colorscheme("catppuccin")
-    end,
+		vim.cmd.colorscheme("catppuccin")
+	end,
 }

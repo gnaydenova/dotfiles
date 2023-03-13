@@ -18,3 +18,4 @@ vim.o.updatetime = 700
 vim.o.mouse = "n"
 vim.o.completeopt = "menu,menuone,noselect"
 vim.o.timeoutlen = 200
+vim.o.clipboard = "unnamedplus"
