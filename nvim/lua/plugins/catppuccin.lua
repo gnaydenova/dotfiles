@@ -10,6 +10,8 @@ return {
 			gitsigns = true,
 			nvimtree = true,
 			telescope = true,
+			neotest = true,
+			which_key = true,
 			dap = {
 				enabled = true,
 				enable_ui = true,
