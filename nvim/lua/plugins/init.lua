@@ -13,16 +13,6 @@ return {
 		config = true,
 	},
 	{
-		"folke/which-key.nvim",
-		config = true,
-		opts = {
-			window = {
-				border = "rounded",
-				padding = { 1, 0, 1, 0 }
-			}
-		}
-	},
-	{
 		"numToStr/Navigator.nvim",
 		config = true,
 		keys = {
