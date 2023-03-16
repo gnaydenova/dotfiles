@@ -17,12 +17,15 @@ return {
 		-- Snippets
 		{ 'L3MON4D3/LuaSnip' },       -- Required
 		{ 'rafamadriz/friendly-snippets' }, -- Optional
+
+		-- Formatting
+		{ 'onsails/lspkind.nvim' }
 	},
 	config = function()
 		local lsp = require('lsp-zero').preset({
 			name = 'recommended',
 			set_lsp_keymaps = false,
-			manage_nvim_cmp = true,
+			manage_nvim_cmp = false,
 			suggest_lsp_servers = true,
 		})
 		lsp.on_attach(function(_, bufnr)
@@ -40,6 +43,37 @@ return {
 			bind('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
 			bind('n', '<leader>f', '<cmd>LspZeroFormat<cr>', opts)
 		end)
+
+		local lspkind = require('lspkind')
+		local cmp = require('cmp')
+		local cmp_config = lsp.defaults.cmp_config({
+			formatting = {
+				format = lspkind.cmp_format({
+					mode = 'symbol_text',
+					maxwidth = 50,
+					ellipsis_char = '...',
+					menu = {
+						path = "[Path]",
+						nvim_lsp = "[LSP]",
+						buffer = "[Buffer]",
+						luasnip = "[Snippet]",
+						cmp_tabnine = "[Tabnine]",
+					},
+				}),
+			},
+			window = {
+				completion = cmp.config.window.bordered({ border = "rounded" }),
+			},
+			sources = {
+				{ name = 'path' },
+				{ name = 'nvim_lsp' },
+				{ name = 'buffer',     keyword_length = 3 },
+				{ name = 'luasnip',    keyword_length = 2 },
+				{ name = 'cmp_tabnine' },
+			}
+		})
+
+		cmp.setup(cmp_config)
 
 		lsp.nvim_workspace()
 		lsp.setup()
