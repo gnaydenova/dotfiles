@@ -4,6 +4,7 @@ return {
 		"nvim-lua/plenary.nvim",
 		"nvim-treesitter/nvim-treesitter",
 		"nvim-neotest/neotest-go",
+		"haydenmeade/neotest-jest",
 	},
 	keys = {
 		{
@@ -57,6 +58,13 @@ return {
 			-- your neotest config here
 			adapters = {
 				require("neotest-go"),
+				require('neotest-jest')({
+					jestCommand = "npm test --",
+					env = { CI = true },
+					cwd = function()
+						return vim.fn.getcwd()
+					end,
+				}),
 			},
 		})
 	end,

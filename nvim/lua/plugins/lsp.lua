@@ -19,7 +19,9 @@ return {
 		{ 'rafamadriz/friendly-snippets' }, -- Optional
 
 		-- Formatting
-		{ 'onsails/lspkind.nvim' }
+		{ 'onsails/lspkind.nvim' },
+		{ 'jose-elias-alvarez/null-ls.nvim' },
+		{ 'jay-babu/mason-null-ls.nvim' }
 	},
 	config = function()
 		local lsp = require('lsp-zero').preset({
@@ -77,5 +79,11 @@ return {
 
 		lsp.nvim_workspace()
 		lsp.setup()
+
+		require("mason-null-ls").setup({
+			ensure_installed = { "stylua", "prettier" },
+			automatic_setup = true,
+		})
+		require("null-ls").setup()
 	end
 }
