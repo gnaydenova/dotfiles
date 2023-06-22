@@ -17,6 +17,15 @@ return {
 			desc = "Run nearest test",
 		},
 		{
+			"<leader>tt",
+			function()
+				local neotest = require("neotest")
+				neotest.output_panel.open()
+				neotest.run.run_last()
+			end,
+			desc = "Re-run last",
+		},
+		{
 			"<leader>tf",
 			function()
 				local neotest = require("neotest")
