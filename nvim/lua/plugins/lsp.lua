@@ -34,6 +34,8 @@ return {
 			local opts = { buffer = bufnr }
 			local bind = vim.keymap.set
 
+			vim.lsp.buf.inlay_hint(bufnr, true)
+
 			bind('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
 			bind('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
 			bind('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
@@ -78,6 +80,32 @@ return {
 		cmp.setup(cmp_config)
 
 		lsp.nvim_workspace()
+
+		lsp.configure('lua_ls', {
+			settings = {
+				Lua = {
+					hint = {
+						enable = true
+					}
+				}
+			}
+		})
+
+		lsp.configure('gopls', {
+			settings = {
+				gopls = {
+					hints = {
+						-- assignVariableTypes = true,
+						-- compositeLiteralFields = true,
+						-- compositeLiteralTypes = true,
+						-- functionTypeParameters = true,
+						parameterNames = true,
+						-- rangeVariableTypes = true,
+					}
+				}
+			}
+		})
+
 		lsp.setup()
 
 		require("mason-null-ls").setup({
