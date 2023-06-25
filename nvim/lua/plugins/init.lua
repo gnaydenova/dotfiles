@@ -22,8 +22,4 @@ return {
 			{ "<C-l>", "<cmd>NavigatorRight<CR>", desc = "Navigate Right" },
 		},
 	},
-	{
-		"luukvbaal/statuscol.nvim",
-		config = true,
-	}
 }
