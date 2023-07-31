@@ -15,7 +15,8 @@ return {
 			dap = {
 				enabled = true,
 				enable_ui = true,
-			}
+			},
+			ts_rainbow2 = true,
 		}
 	},
 	config = function(_, opts)
