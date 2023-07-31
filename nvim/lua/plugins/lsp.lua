@@ -34,7 +34,7 @@ return {
 			local opts = { buffer = bufnr }
 			local bind = vim.keymap.set
 
-			vim.lsp.buf.inlay_hint(bufnr, true)
+			vim.lsp.inlay_hint(bufnr, true)
 
 			bind('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
 			bind('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
