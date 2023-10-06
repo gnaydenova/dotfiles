@@ -4,14 +4,14 @@ return {
 	config = true,
 	keys = {
 		{
-			"<leader>sl",
+			"<leader>pl",
 			function()
 				require("persistence").load({ last = true })
 			end,
 			desc = "Restore last session",
 		},
 		{
-			"<leader>sr",
+			"<leader>pr",
 			function()
 				require("persistence").load()
 			end,

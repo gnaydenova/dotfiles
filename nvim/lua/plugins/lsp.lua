@@ -30,11 +30,13 @@ return {
 			manage_nvim_cmp = false,
 			suggest_lsp_servers = true,
 		})
-		lsp.on_attach(function(_, bufnr)
+		lsp.on_attach(function(client, bufnr)
 			local opts = { buffer = bufnr }
 			local bind = vim.keymap.set
 
-			vim.lsp.inlay_hint(bufnr, true)
+			if client.supports_method("textDocument/inlayHint") then
+				vim.lsp.inlay_hint(bufnr, true)
+			end
 
 			bind('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
 			bind('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
@@ -109,7 +111,7 @@ return {
 		lsp.setup()
 
 		require("mason-null-ls").setup({
-			ensure_installed = { "stylua", "prettier" },
+			ensure_installed = { "stylua" },
 			automatic_setup = true,
 		})
 		require("null-ls").setup()

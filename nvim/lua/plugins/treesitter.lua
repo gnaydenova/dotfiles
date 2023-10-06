@@ -37,7 +37,7 @@ return {
 				}
 			},
 			rainbow = {
-				enable = true,
+				enable = false,
 				query = 'rainbow-parens',
 				strategy = require('ts-rainbow').strategy.global,
 			}
