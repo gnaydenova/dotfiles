@@ -12,7 +12,8 @@ return {
 
 		wk.register({ name = "+code" }, { prefix = "<leader>c" })
 		wk.register({ name = "+dap" }, { prefix = "<leader>d" })
-		wk.register({ name = "+session" }, { prefix = "<leader>s" })
+		wk.register({ name = "+persistance" }, { prefix = "<leader>p" })
+		wk.register({ name = "+search" }, { prefix = "<leader>s" })
 		wk.register({ name = "+tests" }, { prefix = "<leader>t" })
 	end
 }
