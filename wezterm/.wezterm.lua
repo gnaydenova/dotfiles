@@ -19,6 +19,7 @@ config.window_decorations = "RESIZE"
 
 config.font = wezterm.font("JetBrains Mono")
 config.font_size = 13
+config.line_height = 1.1
 
 config.enable_tab_bar = false
 config.cursor_blink_rate = 0
