@@ -18,15 +18,15 @@ config.color_scheme = "Catppuccin Macchiato"
 config.window_decorations = "RESIZE"
 
 config.font = wezterm.font("JetBrains Mono")
+config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 config.font_size = 13
-config.line_height = 1.1
+config.line_height = 1.2
 
 config.enable_tab_bar = false
 config.cursor_blink_rate = 0
 config.animation_fps = 144
 config.max_fps = 144
 config.bold_brightens_ansi_colors = "No"
-config.cursor_thickness = "1pt"
 
 config.audible_bell = "Disabled"
 
