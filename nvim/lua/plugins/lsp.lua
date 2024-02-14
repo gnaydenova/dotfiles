@@ -35,7 +35,7 @@ return {
 			local bind = vim.keymap.set
 
 			if client.supports_method("textDocument/inlayHint") then
-				vim.lsp.inlay_hint(bufnr, true)
+				vim.lsp.inlay_hint.enable(bufnr, true)
 			end
 
 			bind('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
