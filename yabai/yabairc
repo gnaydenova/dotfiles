@@ -17,6 +17,8 @@ yabai -m config mouse_modifier fn
 # exclude Chrome Picture in Picture windows
 yabai -m rule --add title="^(Picture in Picture|Picture-in-Picture)$" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
+yabai -m rule --add app="^Activity Monitor$" manage=off
+yabai -m rule --add app="^Rancher Desktop" manage=off
 yabai -m rule --add app="^1Password$" manage=off
 yabai -m rule --add app="^FaceTime$" manage=off
 yabai -m rule --add app="^Photo Booth$" manage=off

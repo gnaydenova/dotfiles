@@ -18,3 +18,4 @@ vim.o.mouse = "a"
 vim.o.completeopt = "menu,menuone,noselect"
 vim.o.timeoutlen = 200
 vim.o.clipboard = "unnamedplus"
+vim.o.splitright = true

@@ -48,6 +48,8 @@ return {
 			bind('n', '<leader>r', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
 			bind('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
 			bind('n', '<leader>f', '<cmd>LspZeroFormat<cr>', opts)
+
+			bind('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>', opts)
 		end)
 
 		local lspkind = require('lspkind')
