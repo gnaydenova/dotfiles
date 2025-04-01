@@ -1,6 +1,6 @@
 return {
   'ellisonleao/glow.nvim',
-  config = {
+  opts = {
     style = '~/.config/glamour/catppuccin-macchiato.json',
   },
   cmd = 'Glow',
