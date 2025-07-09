@@ -10,6 +10,7 @@ return {
     'MunifTanjim/nui.nvim',
   },
   cmd = 'Neotree',
+  lazy = true,
   keys = {
     { '\\', ':Neotree reveal<CR>', { desc = 'NeoTree reveal' } },
   },

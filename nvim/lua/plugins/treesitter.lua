@@ -5,7 +5,6 @@ return {
     'nvim-treesitter/nvim-treesitter-refactor',
     'nvim-treesitter/nvim-treesitter-textobjects',
     'nvim-treesitter/playground',
-    'HiPhish/nvim-ts-rainbow2',
   },
   config = function()
     local treesitter = require 'nvim-treesitter.configs'
@@ -18,6 +17,7 @@ return {
       ensure_installed = 'all',
       sync_install = false,
       auto_install = true,
+      ignore_install = {'ipkg'},
       highlight = {
         enable = true,
       },
@@ -37,11 +37,6 @@ return {
         highlight_definitions = {
           enable = true,
         },
-      },
-      rainbow = {
-        enable = false,
-        query = 'rainbow-parens',
-        strategy = require('ts-rainbow').strategy.global,
       },
     }
   end,

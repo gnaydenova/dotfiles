@@ -6,6 +6,7 @@ return {
     'nvim-neotest/neotest-go',
     'haydenmeade/neotest-jest',
   },
+  lazy = true,
   keys = {
     {
       '<leader>tr',
