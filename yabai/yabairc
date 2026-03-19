@@ -25,11 +25,11 @@ yabai -m rule --add app="^Photo Booth$" manage=off
 yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^System Preferences$" manage=off
-yabai -m rule --add app="^CameraController$" manage=off
 yabai -m rule --add title='^Slack \| mini panel$' manage=off layer=above
 yabai -m rule --add subrole="^AXSystemDialog$" manage=off mouse_follows_focus=off
 
-# Keep JetBrains main windows managed, float only dialogs/popups.
+# make JetBrains products popup windows float
 apps='^(GoLand|DataGrip)$'
-yabai -m rule --add app="${apps}" subrole="^AXStandardWindow$" manage=on
-yabai -m rule --add app="${apps}" subrole="^(AXDialog|AXSystemDialog|AXFloatingWindow)$" manage=off
+yabai -m rule --add app="${apps}" manage=off
+yabai -m rule --add app="${apps}" title="( – )" manage=on
+yabai -m rule --add app="${apps}" title=".*\[(.*)\].*" manage=on
