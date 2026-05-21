@@ -4,10 +4,6 @@ return {
   { 'tpope/vim-unimpaired' },
   { 'tpope/vim-sleuth' },
   {
-    'numToStr/Comment.nvim',
-    config = true,
-  },
-  {
     'numToStr/Navigator.nvim',
     config = true,
     keys = {

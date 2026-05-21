@@ -1,43 +1,19 @@
+-- nvim-treesitter is used solely as a parser installer.
+-- Highlighting, indent, and folding are handled by Neovim natively (0.10+).
 return {
   'nvim-treesitter/nvim-treesitter',
+  branch = 'main',
   build = ':TSUpdate',
-  dependencies = {
-    'nvim-treesitter/nvim-treesitter-refactor',
-    'nvim-treesitter/nvim-treesitter-textobjects',
-    'nvim-treesitter/playground',
-  },
+  lazy = false,
   config = function()
-    local treesitter = require 'nvim-treesitter.configs'
+    require('nvim-treesitter').setup()
 
-    vim.cmd [[set foldmethod=expr]]
-    vim.cmd [[set foldexpr=nvim_treesitter#foldexpr()]]
-    vim.cmd [[set foldlevel=10]]
-
-    treesitter.setup {
-      ensure_installed = 'all',
-      sync_install = false,
-      auto_install = true,
-      ignore_install = {'ipkg'},
-      highlight = {
-        enable = true,
-      },
-      indent = {
-        enable = true,
-      },
-      textobjects = {
-        select = {
-          enable = true,
-          keymaps = {
-            ['af'] = '@function.outer',
-            ['if'] = '@function.inner',
-          },
-        },
-      },
-      refactor = {
-        highlight_definitions = {
-          enable = true,
-        },
-      },
+    -- Parsers to keep installed. Add more as needed with :TSInstall <lang>
+    require('nvim-treesitter.install').install {
+      'bash', 'c', 'css', 'diff', 'go', 'gomod', 'gosum', 'gowork',
+      'html', 'javascript', 'json', 'lua', 'luadoc', 'markdown',
+      'markdown_inline', 'python', 'query', 'regex', 'toml', 'tsx',
+      'typescript', 'vim', 'vimdoc', 'yaml',
     }
   end,
 }

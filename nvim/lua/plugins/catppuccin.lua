@@ -6,9 +6,9 @@ return {
   opts = {
     flavour = 'macchiato',
     integrations = {
-      cmp = true,
+      blink_cmp = true,
       gitsigns = true,
-      nvimtree = true,
+      neotree = true,
       telescope = true,
       neotest = true,
       which_key = true,
@@ -16,7 +16,6 @@ return {
         enabled = true,
         enable_ui = true,
       },
-      ts_rainbow2 = true,
     },
   },
   config = function(_, opts)

@@ -30,6 +30,7 @@ require('lazy').setup('plugins', {
     -- import your plugins
     { import = 'plugins' },
   },
+  rocks = { enabled = false },
   -- automatically check for plugin updates
   checker = { enabled = false },
 })

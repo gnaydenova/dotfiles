@@ -3,7 +3,6 @@ return {
   event = 'VimEnter',
   opts = {
     win = {
-      border = 'rounded',
       padding = { 1, 0, 1, 0 },
     },
   },
@@ -11,6 +10,7 @@ return {
     local wk = require 'which-key'
     wk.setup(opts)
     local mappings = {
+      { '<leader>a', group = 'ai' },
       { '<leader>c', group = 'code' },
       { '<leader>d', group = 'dap' },
       { '<leader>p', group = 'persistence' },

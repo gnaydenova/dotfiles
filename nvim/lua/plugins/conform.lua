@@ -5,7 +5,7 @@ return { -- Autoformat
     {
       '<leader>f',
       function()
-        require('conform').format { async = true, lsp_fallback = true }
+        require('conform').format { async = true, lsp_format = 'fallback' }
       end,
       mode = '',
       desc = '[F]ormat buffer',
@@ -20,7 +20,7 @@ return { -- Autoformat
       local disable_filetypes = { c = true, cpp = true, php = true }
       return {
         timeout_ms = 500,
-        lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
+        lsp_format = not disable_filetypes[vim.bo[bufnr].filetype] and 'fallback' or 'never',
       }
     end,
     formatters_by_ft = {

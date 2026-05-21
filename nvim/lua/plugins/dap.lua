@@ -57,11 +57,12 @@ return {
       },
     }
 
-    local sign = vim.fn.sign_define
-
-    sign('DapBreakpoint', { text = '●', texthl = 'DapBreakpoint', linehl = '', numhl = '' })
-    sign('DapBreakpointCondition', { text = '●', texthl = 'DapBreakpointCondition', linehl = '', numhl = '' })
-    sign('DapLogPoint', { text = '◆', texthl = 'DapLogPoint', linehl = '', numhl = '' })
+    vim.api.nvim_set_hl(0, 'DapBreakpoint', { fg = '#e51400' })
+    vim.api.nvim_set_hl(0, 'DapBreakpointCondition', { fg = '#e51400' })
+    vim.api.nvim_set_hl(0, 'DapLogPoint', { fg = '#61afef' })
+    vim.fn.sign_define('DapBreakpoint', { text = '●', texthl = 'DapBreakpoint', linehl = '', numhl = '' })
+    vim.fn.sign_define('DapBreakpointCondition', { text = '●', texthl = 'DapBreakpointCondition', linehl = '', numhl = '' })
+    vim.fn.sign_define('DapLogPoint', { text = '◆', texthl = 'DapLogPoint', linehl = '', numhl = '' })
 
     local dap, dapui = require 'dap', require 'dapui'
     dap.listeners.after.event_initialized['dapui_config'] = function()
