@@ -15,6 +15,18 @@ return {
     },
   },
   keys = {
+    -- Next Edit Suggestions (NES)
+    {
+      '<tab>',
+      function()
+        if not require('sidekick').nes_jump_or_apply() then
+          return '<Tab>'
+        end
+      end,
+      mode = { 'n', 'i' },
+      expr = true,
+      desc = 'Goto/Apply Next Edit Suggestion',
+    },
     -- opencode CLI
     {
       '<leader>ao',
