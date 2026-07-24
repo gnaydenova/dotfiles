@@ -27,11 +27,11 @@ return {
       expr = true,
       desc = 'Goto/Apply Next Edit Suggestion',
     },
-    -- opencode CLI
+    -- pi CLI
     {
       '<leader>ao',
-      function() require('sidekick.cli').toggle { name = 'opencode', focus = true } end,
-      desc = 'Toggle opencode',
+      function() require('sidekick.cli').toggle { name = 'pi', focus = true } end,
+      desc = 'Toggle pi',
     },
     -- Generic CLI controls
     {
