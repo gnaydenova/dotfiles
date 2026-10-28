@@ -7,6 +7,7 @@ return {
       mux = {
         backend = 'tmux',
         enabled = true,
+        create = 'split',
       },
       -- opencode is pre-configured, just ensure it's available
       tools = {
